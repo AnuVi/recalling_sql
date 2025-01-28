@@ -1,4 +1,4 @@
-#sql_1 was created for 
+#sql_1 was created for:
 
 **SQL for Data Analytics - Learn SQL in 4 Hours by <ins>Luke Barousse</ins>**
 
