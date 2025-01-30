@@ -1,8 +1,10 @@
 # recalling_sql 
 **Purpose**
+
 I learned SQL years ago, but I haven't used it for a while.
 
 **Course**
+
 [SQL for Data Analytics Learn SQL in 4 Hours ](https://www.youtube.com/watch?v=7mz73uXD9DA) by _Luke Barousse_
 
 **Tools**
