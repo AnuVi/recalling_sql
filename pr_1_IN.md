@@ -1,12 +1,14 @@
 Practice 1 from the series.
 
+**IN** - to look for multiple values in WHERE-clause.
+
+
 Find jobs:
 - in Boston or Anywhere
 - job-name is Data Analyst and salary is over 100 000
 - job-name is Business Analyst and salary is over 70 000
 
 
-**IN** - to look for multiple values in WHERE-clause.
 
 
 
