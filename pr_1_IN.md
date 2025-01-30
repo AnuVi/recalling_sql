@@ -1,12 +1,12 @@
-/***
+Practice 1 from the series.
 
-IN - to look for several strings
-
-***/
+**IN** - to look for multiple values in WHERE-clause.
 
 
 
 
+
+```sql
 SELECT 
  	job_title_short, job_location, salary_year_avg 
 FROM 
@@ -19,6 +19,8 @@ WHERE
     )
 ORDER BY 
 	salary_year_avg DESC;
+```
+
 
 ![Image](https://github.com/user-attachments/assets/563bcfe0-aee2-4451-a843-f44cd5e44789)
 
