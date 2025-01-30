@@ -20,3 +20,5 @@ WHERE
 ORDER BY 
 	salary_year_avg DESC;
 
+![alt text](https://drive.google.com/file/d/15ttl24J9CbC0-PUf7HRBsSqMxWGqfzAd/view?usp=drive_link)
+
