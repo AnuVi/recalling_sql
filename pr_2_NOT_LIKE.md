@@ -2,7 +2,9 @@ Practice 2 from the series.
 
 
 **NOT LIKE** syntax example.
-**%** is called wildcards
+
+**%** is called wildcards.
+
 
 Find job titles with
 - Data or Business
