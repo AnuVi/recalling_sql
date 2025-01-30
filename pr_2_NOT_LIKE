@@ -2,8 +2,13 @@ Practice 2
 
 **NOT LIKE** syntax example
 
+Find job titles with
+- Data or Business
+- but not Senior Data
+
 
 ```sql
+
 SELECT 
  	job_title AS position,
   job_location AS location, 
@@ -14,4 +19,4 @@ WHERE
     (job_title LIKE '%Business%' OR '%Data%') AND
      job_title LIKE '%Data%' AND job_title NOT LIKE '%senior%';
 
-  ```sql
+  ```
