@@ -1,5 +1,9 @@
 Different operations + practice 3 from the series.
 
+Including
+- **BETWEEN** instead salary > 1000 AND 5000 < salary, we can use salary BETWEEN 1000 AND 5000
+- **%** modulus
+
 ```sql
 -- drop hours_rate - 5
 -- raise hours rate + 5
