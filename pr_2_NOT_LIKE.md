@@ -1,4 +1,4 @@
-Practice 2
+Practice 2 from the series
 
 **NOT LIKE** syntax example
 
