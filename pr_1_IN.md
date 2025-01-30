@@ -1,7 +1,8 @@
 Practice 1 from the series.
+
 <sub><sup>
-Find jobs:</sup></sub>
-<sub><sup>- in Boston or Anythere
+Find jobs:
+- in Boston or Anythere
 - job-name is Data Analyst and salary is over 100 000
 - job-name is Business Analyst and salary is over 70 000
 </sup></sub>
