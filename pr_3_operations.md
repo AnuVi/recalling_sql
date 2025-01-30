@@ -1,6 +1,6 @@
 Different operations + practice 3 from the series.
 
-Including
+Including:
 - **BETWEEN** instead salary > 1000 AND 5000 < salary, we can use salary BETWEEN 1000 AND 5000
 - **%** modulus
 
