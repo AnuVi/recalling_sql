@@ -1,0 +1,17 @@
+Practice 2
+
+**NOT LIKE** syntax example
+
+
+```sql
+SELECT 
+ 	job_title AS position,
+  job_location AS location, 
+  salary_year_avg AS salary 
+FROM 
+ 	job_postings_fact
+WHERE 
+    (job_title LIKE '%Business%' OR '%Data%') AND
+     job_title LIKE '%Data%' AND job_title NOT LIKE '%senior%';
+
+  ```sql
