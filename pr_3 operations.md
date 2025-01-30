@@ -49,29 +49,38 @@ LIMIT 5;
 
 
 ```sql
--- % e.g working overhours
+--Modulus % e.g working overhours
 -- returning that is left
+
 SELECT
-	activity_id,
+    activity_id,
     hours_spent,
     hours_spent % 8 as extra_hours
 FROM invoices_fact
 WHERE
 	(hours_spent BETWEEN 8 AND 16) AND extra_hours > 0 
-ORDER BY hours_spent DESC;
+ORDER BY hours_spent DESC
+LIMIT 5;
 
 ```
+
+![Image](https://github.com/user-attachments/assets/f41ebb5b-2a51-474b-9144-5e0b8ffc1911)
+
+
 
 ```sql
 -- CALCULATE total by project
 
 SELECT 
-	project_id, 
+project_id, 
     hours_spent,
     hours_rate AS original_rate,
     SUM (hours_rate * hours_spent) AS total_project,
     SUM (hours_rate * hours_spent) AS estamate_total_project
 FROM invoices_fact
 GROUP BY project_id
+LIMIT 5;
 
 ```
+
+![image](https://github.com/user-attachments/assets/c67f71d8-e6bb-4ef7-bf54-354eb715b735)
