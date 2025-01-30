@@ -1,9 +1,9 @@
 Practice 1 from the series.
 <sub><sup>
-Find jobs:
+Find jobs:</sup></sub>
 <sub><sup>- in Boston or Anythere
-<sub><sup>- job-name is Data Analyst and salary is over 100 000
-<sub><sup>- job-name is Business Analyst and salary is over 70 000
+- job-name is Data Analyst and salary is over 100 000
+- job-name is Business Analyst and salary is over 70 000
 </sup></sub>
 
 **IN** - to look for multiple values in WHERE-clause.
