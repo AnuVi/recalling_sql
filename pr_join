@@ -22,6 +22,7 @@ LEFT JOIN company_dim as cd
      -- how these tables are connected, all content from LEFT table and matching from the right side
      ON cd.company_id=jpf.company_id
 WHERE jpf.job_location LIKE '%Estonia%';
+
 ```
 
 ![Image](https://github.com/user-attachments/assets/504dc29a-de53-4361-a98e-0cfb2d1d4153)
