@@ -1,3 +1,5 @@
+Pracitice 6 from series.
+
 # CASE 
 Similar to programming *if*.
 
