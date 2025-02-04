@@ -108,3 +108,34 @@ AND salary_year_avg IS NOT NULL
 ORDER BY salary_year_avg DESC
 
 ![Kuvatõmmis 2025-02-04 102953](https://github.com/user-attachments/assets/f49f635c-c729-4f64-8dbf-9953d2dd173d)
+
+
+// siia vahele
+SELECT job_title_short, job_id,
+job_location,
+salary_year_avg,
+round(salary_year_avg/12) as paid_monthly,
+name as company
+FROM job_postings_fact
+LEFT JOIN company_dim
+ON company_dim.company_id = job_postings_fact.company_id
+WHERE 
+job_location IN ('Estonia', 'Lithuania', 'Latvia', 'Finland') 
+AND salary_year_avg IS NOT NULL
+AND job_title_short LIKE '%Analyst%'
+ORDER BY salary_year_avg DESC
+![Kuvatõmmis 2025-02-04 113606](https://github.com/user-attachments/assets/4e9dbac5-b50c-41c3-9c29-7521ab39b3e5)
+
+-- avr_salary and skills
+
+-- avg_salary
+
+WITH 
+    skills_listing AS ( SELECT skill_id, count(skill_id) as demand_for_skill
+     FROM skills_job_dim AS sjd INNER JOIN job_postings_fact AS jpf ON sjd.job_id = jpf.job_id 
+    WHERE jpf.job_title_short LIKE '%Analyst%' AND job_location IN ('Estonia', 'Lithuania', 'Latvia', 'Finland') AND jpf.salary_year_avg IS NOT NULL
+    GROUP BY skill_id )
+
+SELECT skills_dim.skill_id, skills_dim.skills, skills_listing.demand_for_skill FROM skills_dim INNER JOIN skills_listing ON skills_dim.skill_id = skills_listing.skill_id ORDER BY skills_listing
+
+![Kuvatõmmis 2025-02-04 113431](https://github.com/user-attachments/assets/35d38b08-f1d4-422a-a495-c756f02da334)
