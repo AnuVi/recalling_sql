@@ -71,3 +71,40 @@ GROUP BY job_location, name
 ORDER BY postings_per_company DESC
 ![Image](https://github.com/user-attachments/assets/7b44d25e-fd9a-43cd-8a62-95eb7038bbb1)
 ![Image](https://github.com/user-attachments/assets/4b4c6592-399e-4175-9e47-440dfb284fae)
+
+-- top 10 skills by postings
+
+WITH skills_listing AS (
+SELECT  skill_id, count(skill_id) as demand_for_skill 
+FROM skills_job_dim AS sjd
+INNER JOIN job_postings_fact AS jpf
+ON sjd.job_id = jpf.job_id
+WHERE jpf.job_title_short LIKE '%Analyst%'
+AND job_location IN ('Estonia', 'Lithuania', 'Latvia', 'Finland') 
+GROUP BY skill_id
+)
+
+SELECT skills_dim.skill_id, skills_dim.skills, skills_listing.demand_for_skill FROM skills_dim
+INNER JOIN skills_listing
+ ON skills_dim.skill_id = skills_listing.skill_id
+ORDER BY skills_listing.demand_for_skill DESC 
+LIMIT 10
+
+![image](https://github.com/user-attachments/assets/b8da5cde-2c93-4a70-8b21-28e02e73a864)
+
+-- avg_salary, job_title doesn't matter
+-- avg_salary
+SELECT job_title_short,
+job_location,
+salary_year_avg,
+round(salary_year_avg/12) as paid_monthly,
+name as company
+FROM job_postings_fact
+LEFT JOIN company_dim
+ON company_dim.company_id = job_postings_fact.company_id
+WHERE 
+job_location IN ('Estonia', 'Lithuania', 'Latvia', 'Finland') 
+AND salary_year_avg IS NOT NULL
+ORDER BY salary_year_avg DESC
+
+![Kuvatõmmis 2025-02-04 102953](https://github.com/user-attachments/assets/f49f635c-c729-4f64-8dbf-9953d2dd173d)
