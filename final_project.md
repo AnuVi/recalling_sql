@@ -86,9 +86,12 @@ ORDER BY job_location, postings_per_portal DESC
 
 
 # Job Postings By Company
-
 Bolt, Wolt, Nortal, Veriff are familiar names. Banks, universities and govermental company were also in the list (Omniva post delivery,logistics).
-- 
+Top three companies from the list:
+	- Hostinger is a web hosting company.
+ 	- Aspo area is business-developing/shareholding company.
+  	- Gapgemini offers also business-consult.
+
 
 ![Image](https://github.com/user-attachments/assets/7b44d25e-fd9a-43cd-8a62-95eb7038bbb1)
 
@@ -113,7 +116,10 @@ GROUP BY job_location, name
 ORDER BY postings_per_company DESC
 ```
 
--- top 10 skills by postings
+# Top 10 skills 
+According to job-titles with word "Analyst" and in Estonia/Latvia/Estoni/Finland top 10 skills are:
+```sql
+![image](https://github.com/user-attachments/assets/b8da5cde-2c93-4a70-8b21-28e02e73a864)
 
 WITH skills_listing AS (
 SELECT  skill_id, count(skill_id) as demand_for_skill 
@@ -130,8 +136,8 @@ INNER JOIN skills_listing
  ON skills_dim.skill_id = skills_listing.skill_id
 ORDER BY skills_listing.demand_for_skill DESC 
 LIMIT 10
+```sql
 
-![image](https://github.com/user-attachments/assets/b8da5cde-2c93-4a70-8b21-28e02e73a864)
 
 -- avg_salary, job_title doesn't matter
 -- avg_salary
