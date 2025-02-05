@@ -1,8 +1,21 @@
+# Intro
+[Luke Barousse](https://www.lukebarousse.com/) collects data from job-posts: [https://datanerd.tech/](https://datanerd.tech/). During his SQL-course <em>data from year 2023</em> is used.
 
-also where salary_year_avg data is missing
-all together 132 postings
-the only 5 job postings
+I've decided to focus my research on Estonia, Latvia, Lithuania and Finland because:
+- I have a personal connection with this region
+- and I am looking around "data-<em>fill with suitbale the position</em>" job-market
 
+
+# Job Postings And Avarage Salary
+
+All together there were 132 job postings:
+- located in Estonia or Latvia or Lithuania or Finland
+- and where job title consisted word "Analyst"
+- unfortunatley only 5 of them had info about salary per year
+  
+![Image](https://github.com/user-attachments/assets/23b19515-9b2a-410b-a4c3-9ad71d622163)  
+
+```sql
 SELECT 
 	job_title,
     job_title_short
@@ -18,10 +31,15 @@ LEFT JOIN company_dim ON
 WHERE job_location IN ('Estonia', 'Lithuania', 'Latvia', 'Finland') 
     AND job_title_short LIKE '%Analyst%'
     AND salary_year_avg IS NOT NULL
+```
 
-![Image](https://github.com/user-attachments/assets/23b19515-9b2a-410b-a4c3-9ad71d622163)
 
--- From which country most postings
+# Job Postings And Country
+If to look posts according to country, where the job title consisted word "Analyst". Finland was leading with 9 offers. Estonia had 21, Lithuania 13 and Latvia had only 2 job-ads.
+
+![Image](https://github.com/user-attachments/assets/5bbd7d41-e9e8-4e75-a50a-4d89038c6860)
+
+```sql
 SELECT 
   job_title_short,
   job_location,
@@ -31,10 +49,25 @@ WHERE job_location IN ('Estonia', 'Lithuania', 'Latvia', 'Finland')
     AND job_title_short LIKE '%Analyst%'
 GROUP BY job_location, job_title_short
 ORDER BY jobs_per_country DESC
+```
+Short job-titles with word "Analyst" did not offer any suprises: data analyst, business analyst + variation with "senior". However, it is more interesting to look at longer job titles. From team leading and being a data architect to internships, 99 different job titles were mentioned. 
 
-![Image](https://github.com/user-attachments/assets/5bbd7d41-e9e8-4e75-a50a-4d89038c6860)
+![image](https://github.com/user-attachments/assets/439f9e83-e059-47d4-b48c-308c5dd7d367)
 
--- from which portal 
+
+# Job-portals vs Postings
+The summary is written by Copilot.
+
+**Estonia**: The highest number of job postings is on LinkedIn (7). Other portals like Wellfound, Recruit.net, and Startup Jobs have fewer postings. The least number of postings are found on portals such as Ai-Jobs.net, Kandideeri EE, Kandideeri.ee, Placement India, and Trabajo.org(each with 1 posting).
+
+**Finland**: The most job postings are on Trabajo.org(42), followed by LinkedIn Finland (13) and Työpaikat | Indeed (10). Other portals, like SmartRecruiters Job Search, Snowflake Careers, and Technojobs, each have only one posting.
+
+**Latvia**: Both ProZ.comand Recruit.net have only one job posting.
+
+**Lithuania**: The highest number of job postings is on Trabajo.org(8). Other portals mentiond are BeBee, LinkedIn, Sports Tech Jobs, Tech4Good Jobs, aAi-Jobs.neteach.
+
+![Image](https://github.com/user-attachments/assets/8389c2c7-ee4d-4151-be41-fe3d0eeca16b)
+```sql
 SELECT 
   job_location,
   job_via,
@@ -49,10 +82,19 @@ WHERE
     AND job_title_short LIKE '%Analyst%'
 GROUP BY job_via, job_location
 ORDER BY job_location, postings_per_portal DESC
-![Image](https://github.com/user-attachments/assets/8389c2c7-ee4d-4151-be41-fe3d0eeca16b)
+```
 
 
--- From which company
+# Job Postings By Company
+
+Bolt, Wolt, Nortal, Veriff are familiar names. Banks, universities and govermental company were also in the list (Omniva post delivery,logistics).
+- 
+
+![Image](https://github.com/user-attachments/assets/7b44d25e-fd9a-43cd-8a62-95eb7038bbb1)
+
+![Image](https://github.com/user-attachments/assets/4b4c6592-399e-4175-9e47-440dfb284fae)
+
+```sql
 SELECT 
   job_location,
   name,
@@ -69,8 +111,7 @@ WHERE
     AND job_title_short LIKE '%Analyst%'
 GROUP BY job_location, name
 ORDER BY postings_per_company DESC
-![Image](https://github.com/user-attachments/assets/7b44d25e-fd9a-43cd-8a62-95eb7038bbb1)
-![Image](https://github.com/user-attachments/assets/4b4c6592-399e-4175-9e47-440dfb284fae)
+```
 
 -- top 10 skills by postings
 
