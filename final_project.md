@@ -35,7 +35,7 @@ WHERE job_location IN ('Estonia', 'Lithuania', 'Latvia', 'Finland')
 
 
 # Job Postings And Country
-If to look posts according to rhe country, where the job title consisted word "Analyst", Finland was leading with 91 offers. Estonia had 21, Lithuania 13 and Latvia had only 2 job-ads.
+If to look posts according to the country and the job title had word "Analyst" in it, Finland was leading with 96 offers. Estonia had 21, Lithuania 13 and Latvia had only 2 job-ads.
 
 ![Image](https://github.com/user-attachments/assets/5bbd7d41-e9e8-4e75-a50a-4d89038c6860)
 
