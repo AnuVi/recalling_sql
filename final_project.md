@@ -138,7 +138,7 @@ ORDER BY skills_listing.demand_for_skill DESC
 LIMIT 10
 ```
 
-Here is comparing queries results to the world TOP10 skills with job title "Analyst".
+Here is comparing query's result to the world TOP10 skills with job title "Analyst".
 
 ![Kuvatõmmis 2025-02-06 154417](https://github.com/user-attachments/assets/64b53ffd-138d-40b8-bb99-6e39d5df9d21)
 
@@ -161,7 +161,8 @@ And summarised Copilot's comparing table:
 | SAS          | -                                                        | 9th                   |
 
 
-
+# Avarage salary
+As there were only 5 job ads in 2023 
 -- avg_salary, job_title doesn't matter
 -- avg_salary
 ```sql
