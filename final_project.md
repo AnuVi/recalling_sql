@@ -86,10 +86,10 @@ ORDER BY job_location, postings_per_portal DESC
 
 
 # Job Postings By Company
-Bolt, Wolt, Nortal, Veriff are familiar names. Banks, universities and govermental company were also in the list (Omniva post delivery,logistics).
+Bolt, Wolt, Nortal, Veriff are familiar names in Estonia. Banks, university and state-owned enteprise (Omniva post delivery,logistics) ca be also found.
 Top three companies from the list:
 	- Hostinger is a web hosting company.
- 	- Aspo area is business-developing/shareholding company.
+ 	- Aspo area is business-developing/shareholding.
   	- Gapgemini offers also business-consult.
 
 
@@ -136,7 +136,28 @@ INNER JOIN skills_listing
  ON skills_dim.skill_id = skills_listing.skill_id
 ORDER BY skills_listing.demand_for_skill DESC 
 LIMIT 10
-```sql
+```
+
+Here is comparing queries results to the world TOP10 skills with job title "Analyst"
+![Kuvatõmmis 2025-02-06 154417](https://github.com/user-attachments/assets/64b53ffd-138d-40b8-bb99-6e39d5df9d21)
+
+And Copilot's comparing table:
+
+| **Skill**    | **Position in Estonia** | **Position Globally** |
+|--------------|-------------------------|-----------------------|
+| SQL          | 1st                     | 1st                   |
+| Python       | 2nd                     | 3rd                   |
+| Tableau      | 3rd                     | 4th                   |
+| Excel        | 4th                     | 2nd                   |
+| Power BI     | 5th                     | 5th                   |
+| R            | 6th                     | 6th                   |
+| Azure        | 7th                     | -                     |
+| Looker       | 8th                     | -                     |
+| AWS          | 9th                     | -                     |
+| Go           | 10th                    | -                     |
+| PowerPoint   | -                       | 7th                   |
+| Word         | -                       | 8th                   |
+| SAS          | -                       | 9th                   |
 
 
 -- avg_salary, job_title doesn't matter
