@@ -163,8 +163,9 @@ And summarised Copilot's comparing table:
 
 # More About Avarage Salary
 There were only 5 job ads in 2023 in Estonia, Lithuania, Latvia and Finland which had info about salary per year. Just out of curiosity, lets ask salary:
- 	- location stays the same
-  	- job title does not matter
+
+- location stays the same
+- job title does not matter
 
 ![Kuvatõmmis 2025-02-04 102953](https://github.com/user-attachments/assets/f49f635c-c729-4f64-8dbf-9953d2dd173d)
 
