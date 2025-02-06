@@ -86,7 +86,7 @@ ORDER BY job_location, postings_per_portal DESC
 
 
 # Job Postings By Company
-Bolt, Wolt, Nortal, Veriff are familiar names in Estonia. Banks, university and state-owned enteprise (Omniva post delivery,logistics) ca be also found.
+Bolt, Wolt, Nortal, Veriff are familiar names in Estonia. Banks, university and state-owned enteprise (Omniva post delivery,logistics) can be also found.
 Top three companies from the list:
 	- Hostinger is a web hosting company.
  	- Aspo area is business-developing/shareholding.
