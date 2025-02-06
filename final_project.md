@@ -118,9 +118,9 @@ ORDER BY postings_per_company DESC
 
 # Top 10 skills 
 According to job-titles with word "Analyst" and in Estonia/Latvia/Estoni/Finland top 10 skills are:
-```sql
 ![image](https://github.com/user-attachments/assets/b8da5cde-2c93-4a70-8b21-28e02e73a864)
 
+```sql
 WITH skills_listing AS (
 SELECT  skill_id, count(skill_id) as demand_for_skill 
 FROM skills_job_dim AS sjd
@@ -139,29 +139,32 @@ LIMIT 10
 ```
 
 Here is comparing queries results to the world TOP10 skills with job title "Analyst"
+
 ![Kuvatõmmis 2025-02-06 154417](https://github.com/user-attachments/assets/64b53ffd-138d-40b8-bb99-6e39d5df9d21)
 
 And Copilot's comparing table:
 
-| **Skill**    | **Position in Estonia** | **Position Globally** |
-|--------------|-------------------------|-----------------------|
-| SQL          | 1st                     | 1st                   |
-| Python       | 2nd                     | 3rd                   |
-| Tableau      | 3rd                     | 4th                   |
-| Excel        | 4th                     | 2nd                   |
-| Power BI     | 5th                     | 5th                   |
-| R            | 6th                     | 6th                   |
-| Azure        | 7th                     | -                     |
-| Looker       | 8th                     | -                     |
-| AWS          | 9th                     | -                     |
-| Go           | 10th                    | -                     |
-| PowerPoint   | -                       | 7th                   |
-| Word         | -                       | 8th                   |
-| SAS          | -                       | 9th                   |
+| **Skill**    | **Position in Estonia, Latvia, Lithuania, and Finland** | **Position Globally** |
+|--------------|----------------------------------------------------------|-----------------------|
+| SQL          | 1st                                                      | 1st                   |
+| Python       | 2nd                                                      | 3rd                   |
+| Tableau      | 3rd                                                      | 4th                   |
+| Excel        | 4th                                                      | 2nd                   |
+| Power BI     | 5th                                                      | 5th                   |
+| R            | 6th                                                      | 6th                   |
+| Azure        | 7th                                                      | -                     |
+| Looker       | 8th                                                      | -                     |
+| AWS          | 9th                                                      | -                     |
+| Go           | 10th                                                     | -                     |
+| PowerPoint   | -                                                        | 7th                   |
+| Word         | -                                                        | 8th                   |
+| SAS          | -                                                        | 9th                   |
+
 
 
 -- avg_salary, job_title doesn't matter
 -- avg_salary
+```sql
 SELECT job_title_short,
 job_location,
 salary_year_avg,
@@ -174,11 +177,12 @@ WHERE
 job_location IN ('Estonia', 'Lithuania', 'Latvia', 'Finland') 
 AND salary_year_avg IS NOT NULL
 ORDER BY salary_year_avg DESC
-
+```
 ![Kuvatõmmis 2025-02-04 102953](https://github.com/user-attachments/assets/f49f635c-c729-4f64-8dbf-9953d2dd173d)
 
 
 // siia vahele
+```sql
 SELECT job_title_short, job_id,
 job_location,
 salary_year_avg,
@@ -192,12 +196,13 @@ job_location IN ('Estonia', 'Lithuania', 'Latvia', 'Finland')
 AND salary_year_avg IS NOT NULL
 AND job_title_short LIKE '%Analyst%'
 ORDER BY salary_year_avg DESC
+```
 ![Kuvatõmmis 2025-02-04 113606](https://github.com/user-attachments/assets/4e9dbac5-b50c-41c3-9c29-7521ab39b3e5)
 
 -- avr_salary and skills
 
 -- avg_salary
-
+```sql
 WITH 
     skills_listing AS ( SELECT skill_id, count(skill_id) as demand_for_skill
      FROM skills_job_dim AS sjd INNER JOIN job_postings_fact AS jpf ON sjd.job_id = jpf.job_id 
@@ -205,5 +210,5 @@ WITH
     GROUP BY skill_id )
 
 SELECT skills_dim.skill_id, skills_dim.skills, skills_listing.demand_for_skill FROM skills_dim INNER JOIN skills_listing ON skills_dim.skill_id = skills_listing.skill_id ORDER BY skills_listing
-
+```
 ![Kuvatõmmis 2025-02-04 113431](https://github.com/user-attachments/assets/35d38b08-f1d4-422a-a495-c756f02da334)
