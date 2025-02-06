@@ -117,7 +117,7 @@ ORDER BY postings_per_company DESC
 ```
 
 # Top 10 skills 
-According to job-titles with word "Analyst" and in Estonia/Latvia/Estoni/Finland top 10 skills are:
+According to job-titles with word "Analyst" and location in Estonia, Latvia, Lithuania or Finland, the TOP10 most searched skills are:
 ![image](https://github.com/user-attachments/assets/b8da5cde-2c93-4a70-8b21-28e02e73a864)
 
 ```sql
@@ -138,11 +138,11 @@ ORDER BY skills_listing.demand_for_skill DESC
 LIMIT 10
 ```
 
-Here is comparing queries results to the world TOP10 skills with job title "Analyst"
+Here is comparing queries results to the world TOP10 skills with job title "Analyst".
 
 ![Kuvatõmmis 2025-02-06 154417](https://github.com/user-attachments/assets/64b53ffd-138d-40b8-bb99-6e39d5df9d21)
 
-And Copilot's comparing table:
+And summarised Copilot's comparing table:
 
 | **Skill**    | **Position in Estonia, Latvia, Lithuania, and Finland** | **Position Globally** |
 |--------------|----------------------------------------------------------|-----------------------|
