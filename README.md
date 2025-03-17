@@ -26,4 +26,4 @@ I learned SQL years ago, but I haven't used it for a while.
   - use Copilot as a learning partner
   - use Postgresql instead of VSCode, because it underlines the error, visually easier to spot the mistake
 - I didn't get my VSCode and Github co-work, but it's ok.
-- Still, during the next learning session upload also to Github at once, because of details I may not remeber later.
+- Still, during the next learning session upload also to Github at once, because of details I may not remember later.
